@@ -5,7 +5,7 @@ library(factoextra)
 library(shiny)
 library(bslib)
 library(DT)
-
+library(rsconnect)
 
 ###Esimerkki datasetti, jota käytimme ryhmittelymenetelmien kurssilla.
 data <- read.table(url("https://cs.uef.fi/sipu/datasets/s1.txt"))
@@ -96,7 +96,7 @@ server <- function(input, output, session) {
     hc <- hclust(d, method = "ward.D")
     plot(hc,
          labels = FALSE,
-         main = "Dendrogram",
+         main = "",
          xlab = "",
          sub = "Using Ward distance")
     rect.hclust(hc, k = 15)})
