@@ -65,34 +65,37 @@ Projektissa on yli 2000 kehittäjää, joista tärkeimmät on mainittu pelin “
 
 ## Osallistuminen Projektiin:
 
-Käytännössä kuka tahansa voi osallistua projektiin, osasi ohjelmoida tai ei
-Se johtuu siitä, että peliin voi lisätä sisältöä pelkästään JSON tiedostojen avulla, mikä on helpompaa kuin C++:lla ohjelmointi
-Ainoa eksplisiittinen rooli mitä projektissa näyttää olevan, on projektipäällikön rooli
-Loput rooleista vaikuttavat siltä, että ne mukautuvat sen mukaan, mikä kiinnostaa ketäkin ja kukaa osaa mitäkin
-Esimerkiksi joku saattaa tykätä pelkästään pelimoottorin optimisoinnista C++:lla, kun taas joku saattaa pelkästään kirjoittaa peliin tarinaa ja lisätä uusia esineitä tai vihollisia
+Käytännössä kuka tahansa voi osallistua projektiin, osasi ohjelmoida tai ei.
+Se johtuu siitä, että peliin voi lisätä sisältöä pelkästään JSON tiedostojen avulla, mikä on helpompaa kuin C++:lla ohjelmointi.
+Ainoa eksplisiittinen rooli mitä projektissa näyttää olevan, on projektipäällikön rooli.
+Loput rooleista vaikuttavat siltä, että ne mukautuvat sen mukaan, mikä kiinnostaa ketäkin ja kukaa osaa mitäkin.
+Esimerkiksi joku saattaa tykätä pelkästään pelimoottorin optimisoinnista C++:lla, kun taas joku saattaa pelkästään kirjoittaa peliin tarinaa ja lisätä uusia esineitä tai vihollisia.
 
-Ohjeen mukaan projekti tulee forkata ja tehdä uusi branchi ja pull request, samaan tapaan kun tämän kurssin ekalla viikolla neuvottiin
-Muuttaessa JSON tiedostoja, tekstieditorin täytyy olla sellainen, joka ei laita BOM kirjainta tiedoston alkuun
-Esimerkiksi Notepad ei kävisi, kun taas Notepad++ käy
-Jos kirjoittaa C++:lla uusia luokkia tai metodeita, olisi hyvä pistää Doxygen kommenteja jotta muut tekijät ymmärtäisivät mitä koodi tekee
-Ennen pull requestin tekemistä olisi myös hyvä ajaa testit jotka sijaitsevat “tests/” kansiossa
+Ohjeen mukaan projekti tulee forkata ja tehdä uusi branchi ja pull request, samaan tapaan kun tämän kurssin ekalla viikolla neuvottiin.
+Muuttaessa JSON tiedostoja, tekstieditorin täytyy olla sellainen, joka ei laita BOM kirjainta tiedoston alkuun.
+Esimerkiksi Notepad ei kävisi, kun taas Notepad++ käy.
+Jos kirjoittaa C++:lla uusia luokkia tai metodeita, olisi hyvä pistää Doxygen kommenteja jotta muut tekijät ymmärtäisivät mitä koodi tekee.
+Ennen pull requestin tekemistä olisi myös hyvä ajaa testit jotka sijaitsevat “tests/” kansiossa.
 
 ## Tekninen Toteutus:
 
-Itse pelimoottorin kielenä on C++, ja se käyttää SDL2 koodikirjastoa ääniin ja grafiikoihin
-Peli käyttää datan tallentamiseen JSON tiedostoja, mikä tekee uuden sisällön lisäämisestä helppoa ei ohjelmoijille
-JSON tiedostoissa on myös se etu, että ohjelmaa ei tarvitse kääntää uudestaan joka kerta kun niitä muokkaa
-Projektissa testeihin käytetään “Catch2” testikirjastoa
-Virallisten ohjeiden mukaan peli tulee kääntää makella, mutta sen voi myös kääntää CMakella halutessaan
-Peli on portattu androidille javan ja gradlen avulla
-Osa projektin työkaluista käyttää myös Python ja Bash
+Itse pelimoottorin kielenä on C++, ja se käyttää SDL2 koodikirjastoa ääniin ja grafiikoihin.
+Peli käyttää datan tallentamiseen JSON tiedostoja, mikä tekee uuden sisällön lisäämisestä helppoa ei ohjelmoijille.
+JSON tiedostoissa on myös se etu, että ohjelmaa ei tarvitse kääntää uudestaan joka kerta kun niitä muokkaa.
+Projektissa testeihin käytetään “Catch2” testikirjastoa.
+Virallisten ohjeiden mukaan peli tulee kääntää makella, mutta sen voi myös kääntää CMakella halutessaan.
+Peli on portattu androidille javan ja gradlen avulla.
+Osa projektin työkaluista käyttää myös Python ja Bash.
 
 ## Ohjelmiston Käyttöönotto:
 
-Pelin voi asentaa joko terminaalipohjaisesti ncurses versiona, tai sitten SDL2 versiona joka sisältää äänet ja paremmat grafiikat
-SDL2 versiota kutsutaan “tiles” versioksi
-Peliin voi asentaa sellaisen tilesetin kuin haluaa, mikä vaikuttaa siihen minkälaiset grafiikat pelissä on
-Lisäksi peliin voi asentaa erilaisia äänikokoelmia, mitkä vaikuttavat ääniefekteihin ja musiikkeihin
+Pelin voi asentaa joko terminaalipohjaisesti ncurses versiona, tai sitten SDL2 versiona joka sisältää äänet ja paremmat grafiikat.
+SDL2 versiota kutsutaan “tiles” versioksi.
+Peliin voi asentaa sellaisen tilesetin kuin haluaa, mikä vaikuttaa siihen minkälaiset grafiikat pelissä on.
+Lisäksi peliin voi asentaa erilaisia äänikokoelmia, mitkä vaikuttavat ääniefekteihin ja musiikkeihin.
+Helpoin tapa pelata peliä on tiettyä käyttää valmiiksi käännettyä ohjelmaa.
+Pelin voi löytää valmiiksi käännettynä mm. tekijöiden verkkosivuilta. 
+Lisäksi pelin voi löytää useista Linux distrojen paketinhallintaohjelmista. 
 
 <https://github.com/CleverRaven/Cataclysm-DDA> (Päärepo)
 
@@ -104,7 +107,7 @@ Lisäksi peliin voi asentaa erilaisia äänikokoelmia, mitkä vaikuttavat ääni
 
 1. Dependencyjen asennus `sudo apt-get install libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libsdl2-mixer-dev libfreetype6-dev build-essential`
 
-2. Repon kloonaaminen `git clone https://github.com/CleverRaven/Cataclysm-DDA.git --single-branch`
+2. Repon kloonaaminen `git clone https://github.com/CleverRaven/Cataclysm-DDA.git --depth=1`
 
 3. Siirtyminen kansioon `cd Cataclysm-DDA`
 
