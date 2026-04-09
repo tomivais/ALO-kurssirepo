@@ -32,7 +32,7 @@ Zac Medico 	zmedico
 ```
 
 ### Osallistuminen Projektiin
-- **Contribution Model:**  Projektiin voi osallistua kuka vain, Ylläoleva taulukko näyttää ketkä ovat korkeamman vastuun roolissa, mutta kontribuutioita otetaan vastaan keneltä tahansa. Pääasiallinen osallistumis kanava on gitlab, mutta myös githubissa on mirrori.
+- **Contribution Model:**  Projektiin voi osallistua kuka vain, Ylläoleva taulukko näyttää ketkä ovat korkeamman vastuun roolissa, mutta kontribuutioita otetaan vastaan keneltä tahansa. Pääasiallinen osallistumis kanava on nykyisin git repo codebergissa. Projekti on vetäytynyt pois githubista microsoftin omistaman palvelun laadun huonontumisen seurauksena. Repo loytyy myos gitlabista.
   **Menettelytavat** git, patchien formatointi, kuten:
 ```
     Use tabs to indent in bash files.

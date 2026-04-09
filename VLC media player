@@ -1,0 +1,109 @@
+# VLC media player
+
+## Ohjelmiston valinta
+VLC media player
+[Linkki VLC media player GitHubiin](https://github.com/videolan/vlc)
+
+### Ohjelma ja sen pääasiallinen tarkoitus
+Kyseessä on avoimen lähdekoodin ohjelmisto, joka lukeutuu maailman tunnetuimpiin mediasoittimiin. Ohjelmisto toimii kattavasti lähes kaikilla käyttöjärjestelmillä. Sen avulla voidaan toistaa digitaalista sisältöä lähes kaikissa video- ja ääniformaateissa eikä se vaadi käyttäjältä toimiakseen erillisiä lisäosia. Ohjelmiston avulla voidaan toistaa myös fyysistä mediaa, kuten DVD-levyjä sekä katsoa striimejä globaalisti verkon yli. VLC mahdollistaa myös tiedoston muuntamisen toiseen muotoon. 
+
+### Toimintaperiaate
+VLC koostuu lukuisista moduuleista, jonka ansiosta se kykenee suorittamaan kompleksisiakin tehtäviä tehokkaasti käyttökokemuksen laadun takaamiseksi. Tämä modulaarisuuden hyödyntäminen mahdollistaa ohjelmiston kehitystyön ketteryyden, sillä koko ohjelmistoa ei tarvitse uudelleenrakentaa mahdollisten lisäysten tai muutosten osuessa kohdalle, sen sijaan tehdään/muokataan yksittäisiä moduuleita.
+
+### Tehtävien suorittaminen pähkinänkuoressa:
+
+* Ohjelmisto lukee raakadatan syötteestä ja tunnistaa, millainen tiedostomuoto on kyseessä.
+
+* Ohjelmisto käyttää demuxer -moduulia, jolla se onnistuu purkamaan paketin ja erottelemaan esimerkiksi audio- ja video sisällöt ts. virrat toisistaan.
+
+* Kun virrat on saatu erotettua toisistaan, ohjelmisto hyödyntää kuhunkin tilanteeseen (eli päätelaitteeseen) soveltuvaa dekooderia, jonka avulla sisältö käännetään sellaiseen bittivirran muotoon, jonka laitteisto voi lukea.
+VLC ei ole riippuvainen käyttöjärjestelmän koodeista, vaan se sisältää sisäänrakennetut dekooderit omassa ohjelmistossaan.
+
+* Lopuksi data johdetaan ulostulo(output) -moduulille, joka esittää sisällön käyttäjälle.
+
+### Ohjelmiston käyttö
+Sillä VLC on lisenssimaksuton, käyttävät sitä asiakkainaan niin kuluttajat kuin myös kaupalliset toimijat. Kun yksityiskäyttäjä tarvitsee luotettavan ohjelman tiedoston toistamiseen, on VLC suosittu vaihtoehto käyttöjärjestelmän omien mediasoitinten rinnalla. Yksityishenkilöiden kotitalousten lisäksi ohjelmistoa käytetään esimerkiksi oppilaitoksissa, eri järjestöissä sekä myös alan ammattilaisten keskuudessa (televisiointi; testataan ja muunnetaan VLC:n avulla videovirtaa). Jopa NASA käyttää VLC:tä tutkimuksessa.
+
+
+## Lisenssi
+Käytössä on kaksi (2) lisenssiä; GNU GPLv2 ja GNU LGPLv2.1
+
+Näiden lisenssien avulla varmistetaan, että ohjelmisto ja sen hyödyntäminen on vapaasti saatavilla eikä kenenkään yksityisomaisuutta. 
+Ohjelmiston käyttäminen on veloituksetonta, mutta käyttäjä on itse vastuussa paikallisten patenttilakien noudattamisesta. Ohjelma toimitetaan sellaisenaan eivätkä sen kehittäjät ole korvausvelvollisia sen mahdollisesti aiheuttamista vahingoista.
+
+VLC:n käyttöliittymä ja sovellus kokonaisuudessaan on lisensoitu GNU GPLv2:lla. Tämän myötä koodi on muokattavissa vapaasti kunkin kehittäjän kohdalle sopivaksi ja ohjelmistoa voidaan käyttää myös kaupalliseen tarkoitukseen. 
+Mikäli koodia jaetaan, on lähdekoodi luovutettava sekä varmistettava lisensoinnin jatkuvuus samanlaisena (copyleft); toisin sanoen ohjelmiston muokattu versio on aina jaettava julkiseksi.
+
+VLC:n kirjastot ja ydinmoottori on lisensoitu GNU LGPLv2.1 lisenssin alle.
+Tämän myötä ohjelmiston kirjastot on linkitettävissä dynaamisesti omiin sovelluksiin. Edellytyksenä on, että mikäli sovellus käyttää LGPL-kirjastoa, loppukäyttäjällä tulee olla mahdollisuus vaihtaa kirjasto aina uudempaan versioon. VLC-kirjaston avoimuus on siis jatkuttava riippumatta siitä, ovatko omat sovellukset avoimia vai suljettuja.
+VLC:n toistotekniikka on laajasti hyödynnettävissä muissa sovelluksissa, sillä ohjelmistokehittäjät saavat hyödyntää VLC:n moottoria omissa sovelluksissaan ja ohjelmissaan osana niitä. VLC:n hyödyntämän moottorin tavoitellaan olevan käytetyin videoteknologia maailmassa. 
+
+
+## Projektin historia ja aktiivisuus
+
+VLC Media Player on yksi maailman tunnetuimmista avoimen lähdekoodin projekteista, jonka juuret ulottuvat vuoteen 1996. Projekti sai alkunsa opiskelijatyönä ranskalaisessa École Centrale Paris -insinöörikoulussa, jossa sen alkuperäinen tarkoitus oli videoiden lähettäminen kampusverkon kautta. Alun perin ohjelmisto koostui kahdesta osasta: VideoLAN Clientista (VLC) ja VideoLAN Serveristä (VLS). Merkittävä käänne tapahtui vuonna 2001, kun ohjelma julkaistiin avoimena lähdekoodina GPL-lisenssillä, mikä mahdollisti maailmanlaajuisen kehittäjäyhteisön liittymisen mukaan. Vuonna 2009 projekti itsenäistyi yliopistosta ja siirtyi voittoa tavoittelemattoman VideoLAN-organisaation alaisuuteen. Yksi tuoreimmista suurista virstanpylväistä oli vuonna 2018 julkaistu VLC 3.x -versio, joka toi mukanaan muun muassa tuen 360-asteen videoille.
+
+Nykyään VLC on erittäin aktiivinen projekti, ja siihen tehdään jatkuvasti päivityksiä ja bugikorjauksia. Kehitystyö on monipuolista, painottuen itse mediasoittimen lisäksi libVLC-kirjastoihin, mobiilisovelluksiin ja dokumentaatioon. Projektin suosio näkyy myös GitHubissa, jossa sillä on yli 17 000 tähteä ja yli 5 000 forkia, vaikka varsinainen kehitystyö tapahtuukin muualla.
+
+Projektin ylläpidosta vastaa pääasiassa VideoLAN-yhteisö, joka koostuu vapaaehtoisista kehittäjistä ympäri maailman. Keskeisenä hahmona ja organisaation johtajana on pitkään toiminut Jean-Baptiste Kempf. Yhteisöön kuuluu ohjelmoijien lisäksi dokumentoijia, suunnittelijoita, testaajia ja ylläpitäjiä.
+
+
+## Osallistuminen projektiin
+VLC noudattaa avoimen lähdekoodin osallistumismallia, mikä tarkoittaa, että kuka tahansa voi osallistua sen kehittämiseen. Osallistujille on tarjolla monia erilaisia rooleja riippuen heidän osaamisestaan:
+
+  * Ohjelmistokehittäjät vastaavat koodin kirjoittamisesta.
+  *  Dokumentaation kirjoittajat ja kääntäjät huolehtivat ohjeistuksista.
+  *  Testaajat ja virheiden raportoijat varmistavat ohjelmiston laadun.
+  *  Suunnittelijat kehittävät käyttöliittymää, ja tukihenkilöt auttavat yhteisön jäseniä.
+
+Kehitysprosessi on yhteisöpohjainen: kehittäjät ehdottavat muutoksia, minkä jälkeen muut yhteisön jäsenet tekevät niille koodikatselmoinnin (code review) ennen kuin ylläpitäjät hyväksyvät ne osaksi projektia.
+
+Käytännön tasolla muutosten tekeminen vaatii tiettyjä työkaluja ja menettelytapoja. On tärkeää huomata, että vaikka projekti näkyy GitHubissa, se on vain peili; varsinainen kehitysalusta ja muutosehdotusten käsittely tapahtuu GitLab-järjestelmässä. Prosessi alkaa tyypillisesti siten, että kehittäjä kloonaa lähdekoodin itselleen Git-versionhallinnalla [täältä](https://code.videolan.org/videolan/vlc.git). Tämän jälkeen muutokset tehdään omaan haaraan (branch), ne testataan huolellisesti ja lopuksi lähetetään yhteisön tarkastettavaksi Merge Requestina (MR).
+
+
+
+## Tekninen toteutus
+### Kielet
+VLC media playerin rakentamiseen on projektin GitHubin mukaan käytetty seuraavia kieliä:
+*  C (61.4 %)
+*  C++ (18.7 %)
+*  Objective-C (9.0 %)
+*  QML (3.5 %)
+*  Makefile (1.6 %)
+*  M4 (0.9 %)
+*  Muut kielet (4.9 %)
+
+Koko projektin ydin on libVLC, eli C-kielen kirjasto, jota voidaan käyttää myös muissa sovelluksissa. LibVLC:lle on myös rajapintoja eri kielille, esim. Python, C#, Java, Go.
+
+### Protokollat
+VLC media playerin tukemia protokollia on pitkä lista, sillä se toimii mediasoitintoiminnon lisäksi myös mediastriimien vastaanottimena. Eri protokollien tehtävä on esimerkiksi siis suoratoistopalveluiden median toistaminen, verkkovideoiden toistaminen sekä verkkoasemien tiedostojen toistaminen.
+
+Tärkeimpiä protokollia: HTTP/HTTPS, FTP, RTP, RTSP, MMS, SMB, SFTP, NFS, UPnP/DLNA
+
+### Välineet
+Projektin kehityksessä on käytetty työkaluina Git-versionhallintaa, ja tärkeimpänä kirjastona libVLC-kirjastoa. Muita kirjastoja projektissa ovat mm. OpenGl -kirjasto videoiden renderöintiin ja FFmpeg-kirjastot äänen ja videon kääntämiseen ja suoralähetyksiin.
+
+Gitin lisäksi muita tärkeitä työkaluja VLC:n kehityksessä ovat GCC/Clang kääntämiseen, Lua -kieli lisäosien skriptejä varten, sekä GNU Autotools -työkalut ja Make-ohjelma automaattiseen lähdekoodin kääntämiseen valmiiksi ohjelmaksi.
+
+## Ohjelmiston asennus ja käyttöönotto
+### Nopea asennus
+Ohjelmiston voi asentaa nopeiten ja kätevimmin käyttämällä valmiita paketteja. Windowsille nopein tapa asennukseen on lataamalla [videolanin sivustolta](https://www.videolan.org/) VLC:n valmiin asennusohjelman. Linux-laitteilla kätevintä asentaminen on komentorivin kautta, esimerkiksi Ubuntulla ”sudo apt install vlc” -komennolla. Mac OS X -laitteille VLC:n saa myös ladattua kätevimmin suoraan edellä linkatun sivuston kautta saatavalla asennusohjelmalla. iOS -laitteille sovellus löytyy suoraan Applen sovelluskaupasta, ja Android laitteille sovellus löytyy Google Play -kaupasta. 
+
+### Kääntäminen lähdekoodista
+Sillä jokaisella käyttöliittymällä komentorivikomennot näyttävät hiukan erilaisilta, on tässä kuvattuna projektin kääntäminen lähdekoodista yksityiskohtaisesti, mutta ilman komentorivikomento-esimerkkejä. Ohjeita seuraamalla saa siis käännettyä ja asennettua sovelluksen lähdekoodista, käyttöliittymästä riippumatta.
+
+   1. Kun projektia lähdetään asentamaan ja kääntämään itse lähdekoodista, tulisi ensin asentaa kääntämiseen tarvittavat riippuvuudet, eli eri työkalut ja kirjastot, joita kääntämiseen tarvitaan.
+
+    2. Seuraavaksi tulisi ladata VLC Media Playerin lähdekoodi, jonka saa kätevästi kloonaamalla sen projektin Gitistä.
+
+    3. Sitten vuorossa on bootstrap, eli luodaan build-järjestelmän tiedostot, eli valmistellaan projekti kääntämistä varten. Bootstrap-komennolla käynnistetään siis Autotools-työkalut ja luodaan configure-skripti, mikä toimii pohjana projektin kääntämistä varten.
+
+    4. Tämän jälkeen konfiguroidaan äsken luotu build-järjestelmä. Konfigurointi-komennolla tarkistetaan, onhan järjestelmässä tarvittavat tiedostot kääntämistä varten, määritetään mitä ominaisuuksia VLC:hen käännetään, ja luodaan Makefile -tiedostot kääntämistä varten, eli määritellään build-asetukset. 
+
+    5. Ohjelman varsinainen kääntäminen suoritetaan siis vasta kaikkien edellisten määrittelyjen jälkeen. Sillä VLC sisältää useita moduuleja, ja sovellusta asentaessa käännetään useita kirjastoja, voi itse kääntäminen kestää muutaman minuutin.
+
+    6. Kääntämisen jälkeen sovellus ei vielä ole käytännössä asennettuna, joten seuraavana vaiheena on asentaminen install-komennolla, eli VLC:n suoritettavan ohjelman, kirjastojen ja plugin-moduulien kopioiminen järjestelmän hakemistoihin.
+
+    7. Lopuksi voit tarvittaessa päivittää tarvittaessa kirjastovälimuistin, ja sitten VLC Media Player on valmis käynnistettäväksi.
+
+
